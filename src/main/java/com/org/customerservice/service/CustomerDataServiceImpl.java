@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.org.customerservice.dao.CustomerDataDao;
+import com.org.customerservice.model.Address;
 import com.org.customerservice.model.Customer;
 import com.org.customerservice.repository.CustomerRepository;
 import com.org.customerservice.response.CustomerResponse;
@@ -56,7 +57,7 @@ public class CustomerDataServiceImpl implements CustomerDataService {
 	}
 
 	@Override
-	public ResponseEntity<Customer> updateCustomerAddress(Long id, Customer customer) {
+	public ResponseEntity<?> updateCustomerAddress(Long id, Address address) {
 		try {
 			if (id == null) {
 				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -64,7 +65,7 @@ public class CustomerDataServiceImpl implements CustomerDataService {
 			Optional<Customer> customerData = customerDataRepository.findById(id);
 			if (customerData.isPresent()) {
 				Customer _customer = customerData.get();
-				_customer.setAddress(customer.getAddress());
+				_customer.setAddress(address);
 				return new ResponseEntity<>(customerDataRepository.save(_customer), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<>(HttpStatus.NOT_FOUND);

@@ -2,6 +2,7 @@ package com.org.customerservice.service;
 
 import org.springframework.http.ResponseEntity;
 
+import com.org.customerservice.model.Address;
 import com.org.customerservice.model.Customer;
 
 public interface CustomerDataService {
@@ -9,7 +10,7 @@ public interface CustomerDataService {
 
 	ResponseEntity<?> addCustomer(Customer customer);
 
-	ResponseEntity<?> updateCustomerAddress(Long id, Customer customer);
+	ResponseEntity<?> updateCustomerAddress(Long id, Address address);
 
 	ResponseEntity<?> searchByFirstAndOrLastName(String firstName, String lastName);
 

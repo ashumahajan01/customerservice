@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.org.customerservice.model.Address;
 import com.org.customerservice.model.Customer;
 import com.org.customerservice.model.CustomerName;
 import com.org.customerservice.service.CustomerDataService;
@@ -34,9 +35,8 @@ public class CustomerServiceController {
 	}
 
 	@PutMapping("/updateaddress/{custid}")
-	public ResponseEntity<?> updateCustomerAddress(@PathVariable("custid") long id,
-			@RequestBody Customer customer) {
-		return customerDataService.updateCustomerAddress(id, customer);
+	public ResponseEntity<?> updateCustomerAddress(@PathVariable("custid") long id,	@RequestBody Address address) {
+		return customerDataService.updateCustomerAddress(id, address);
 	}
 
 	@GetMapping("/searchcustomers")
