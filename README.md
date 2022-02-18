@@ -40,11 +40,11 @@ This service provides the following functionality
 		    "lastName":"Johns",
 		    "age":"40",
 		    "address":{
-		        "streetName" : "Louis Henriastrrat",
-		        "streetNumber" : "75",
-		        "zipCode" : "2595TN",
-		        "city" : "Paris",
-		        "country" : "France"
+				"streetName" : "Louis Henriastrrat",
+				"streetNumber" : "75",
+				"zipCode" : "2595TN",
+				"city" : "Paris",
+				"country" : "France"
 			}
 		} 
 		
@@ -57,12 +57,13 @@ This service provides the following functionality
 
 	3. Update address - PUT method
 		Below is the json data need to send with request.  Make sure to add correct customer id in path by checking into the database. 
+		For example if customer id is 1 then the url will be as follows http://localhost:8080/customerapi/updateaddress/1
 	 	{	   
-	        "streetName": "Andre",
-	        "streetNumber": "751",
-	        "zipCode": "2274TN",
-	        "city": "Hague",
-	        "country": "Netherland"
+			"streetName": "Andre",
+			"streetNumber": "751",
+			"zipCode": "2274TN",
+			"city": "Hague",
+			"country": "Netherland"
 		}	
 		
 # DB and project configuration
